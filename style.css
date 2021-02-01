@@ -163,6 +163,7 @@ nav{
     left: -20%;
     z-index: -1;
     animation: plant-shake 2.5s ease-in-out infinite alternate-reverse 0.5s;
+    max-height: 80%;
 }
 
 .plant2{
@@ -195,5 +196,17 @@ nav{
     }
     to {
         transform: rotateZ(0deg);
+    }
+}
+
+
+
+/* Remove the strange plant branch when the window become too small */
+@media screen and (max-width: 842px){
+    .hero {
+        width: 100%;
+    }
+    .hero-introduction p{
+        padding: 5rem 3rem;
     }
 }
