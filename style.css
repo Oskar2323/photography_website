@@ -25,12 +25,12 @@
 html{
     font-size: 62.5%;
     /* make some variables for the font size, I'll use fluid size that means that from a base will increase by 10px every 1000px of weight. The vairable is setted with the two -- the best thing of the variables is that we can change quickly*/
-    --header1: calc(2rem +1vw);
-    --header2: calc(3.5rem +1vw);
-    --header3: calc(3rem +1vw);
-    --header4: calc(3.4rem +1vw);
-    --text: calc(1.5rem +1vw);
-    --big: calc(2.4rem +1vw);
+    --header1: calc(2rem + 1vw);
+    --header2: calc(3.5rem + 1vw);
+    --header3: calc(3rem + 1vw);
+    --header4: calc(3.4rem + 1vw);
+    --text: calc(1.5rem + 1vw);
+    --big: calc(2.4rem + 1vw);
     /* special color because is not the main one, used a few times */
     --special-color: #906272;
     --background-color: #414141;
@@ -41,7 +41,7 @@ h1{
     font-size: var(--header1);
 }
 
-li, button, label, input, p{
+li, button, label, input, p, a{
     font-size: var(--text);
 }
 
@@ -57,6 +57,16 @@ h4, h5{
     font-size: var(--header4);
 }
 
+
+ul{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* set here something we can use often like flex, so in this way is easier and we will write less code */
 .flex{
     display: flex;
@@ -65,10 +75,125 @@ h4, h5{
     align-items: center;
 }
 
-ul{
-    list-style: none;
+body{
+    font-family: 'Ruhl', sans-serif;
+    /* animation */
+    animation: opening 1s ease-in-out;
 }
 
-a {
-    text-decoration: none;
+h1{
+    font-family: 'Vibes', sans-serif;
+}
+
+/* Nav section */
+.main-head{
+    /* make a shadow under the main head and keep the shadow over the background, if need add z-index*/
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+    
+}
+
+nav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    padding: 2rem 0;
+}
+
+#logo{
+    flex: 1 1 20rem;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+}
+
+.hero{
+    /* to make it all screen*/
+    min-height: 90vh;
+    /* to have the margin only on the logo side*/
+    width: 95%;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* this is to remove the scroll bar from the bottom when I add the plants, try to do it without and will understand*/
+    overflow: hidden;
+}
+
+.hero-introduction{
+    flex: 2 1 40rem;
+    text-align: center;
+}
+
+.hero-introduction p{
+    padding: 5rem 10rem;
+}
+
+.hero-introduction h2{
+    padding-top: 3rem;
+}
+
+/* make some space for the button and put the borders*/
+.hero-introduction a{
+    padding: 3rem 8rem;
+    border: 3px solid black;
+}
+
+.hero-images{
+    flex: 1 1 40rem;
+    background: linear-gradient(#dad8dd, #dad1d4);
+    position: relative;
+    z-index: 1;   
+}
+
+.hero-elena{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* add the decorative plants */
+.plant{
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    z-index: -1;
+    animation: plant-shake 2.5s ease-in-out infinite alternate-reverse 0.5s;
+}
+
+.plant2{
+    left: 40%;
+}
+
+/* Plants animation. But I'm not sure, I like how it look without, so maybe I'll put everything in a comment. Remember to check also in the body section to remove or add it. The opening part is very cool. The are someother but I don't like them*/
+
+@keyframes opening{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1}
+}
+
+/* @keyframes plant-entrance{
+    from {
+        transform: translateY(10%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+} */
+
+/* this one is pretty cool*/
+@keyframes plant-shake{
+    from{
+        transform: rotateZ(-5deg);
+    }
+    to {
+        transform: rotateZ(0deg);
+    }
 }
