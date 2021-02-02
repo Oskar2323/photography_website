@@ -30,7 +30,7 @@ html{
     --header3: calc(3rem + 1vw);
     --header4: calc(3.4rem + 1vw);
     --text: calc(1.5rem + 1vw);
-    --big: calc(2.4rem + 1vw);
+    --big: calc(6rem + 1vw);
     /* special color because is not the main one, used a few times */
     --special-color: #906272;
     --background-color: #414141;
@@ -260,6 +260,72 @@ nav{
     text-align: center;
 }
 
+/* contact section */
+.contact{
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact img{
+    flex: 1 1 40rem; 
+}
+
+.form-wrap{
+    flex: 3 1 40rem;
+}
+
+.form-wrap h2{
+    margin-bottom:3rem;
+}
+.form-wrap span{
+    font-size: var(--big);
+    color: var(--special-color);
+}
+
+.form-wrap label{
+    display: block;
+}
+
+.form-wrap input{
+    display: block;
+    margin: 3 0rem;
+    background: var(--background-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+}
+
+.form-wrap button{
+    padding: 1rem 8rem;
+    background: var(--special-color);
+    color: white;
+    border: none;
+    width: 100%;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* Footer */
+footer{
+    background: var(--background-color);
+    color: white;
+    display: flex;
+    padding: 3rem 5%;
+    align-items: center;
+}
+
+footer ul{
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h4{
+    flex: 4 1 40rem;
+    font-size: calc(1rem + 1vw)
+}
 
 /* Plants animation. But I'm not sure, I like how it look without, so maybe I'll put everything in a comment. Remember to check also in the body section to remove or add it. The opening part is very cool. The are someother but I don't like them*/
 
@@ -319,3 +385,15 @@ nav{
     }
 }
 
+/* another media because the text increase when the sceen become larger. So in this way I will block at 1700xp */
+
+@media screen and (min-width 1700px){
+    html{
+        --header1: 3rem;
+        --header2: 4.5rem;
+        --header3: 3.5rem;
+        --header4: 2.5rem;
+        --big: 6rem;
+        --text: 2.5rem;
+    }
+}
