@@ -131,6 +131,7 @@ nav{
 
 .hero-introduction p{
     padding: 5rem 10rem;
+    color: var(--gray-text);
 }
 
 .hero-introduction h2{
@@ -150,6 +151,7 @@ nav{
     z-index: 1;   
 }
 
+/* get rid off the stretching problem when the window is resizing */
 .hero-elena{
     width: 100%;
     height: 100%;
@@ -169,6 +171,60 @@ nav{
 .plant2{
     left: 40%;
 }
+
+/* About section*/
+.about{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-text{
+    flex: 2 1 40rem;
+    justify-content: space-around;
+    background: var(--background-color);
+    color: white;
+}
+
+.about-text div{
+    padding: 3rem 8rem;
+}
+
+.about-text h3{
+    padding: 2rem 0;
+    font-family: "Ruhl Medium";
+}
+
+.about-text h2{
+    font-family: "Vibes";
+    padding: 4rem;
+}
+
+.about-image{
+    flex: 1 1 40rem;
+    /* to put the MINIMAL text on the image */
+    position: relative;
+}
+
+.about-image h5{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    /* to center the text */
+    transform: translate(-50%, -20%);
+    letter-spacing: 5rem;
+}
+
+/* to get rid off the stretching problem when the window is resizing*/
+.about-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery section*/
+
+
 
 /* Plants animation. But I'm not sure, I like how it look without, so maybe I'll put everything in a comment. Remember to check also in the body section to remove or add it. The opening part is very cool. The are someother but I don't like them*/
 
@@ -208,5 +264,10 @@ nav{
     }
     .hero-introduction p{
         padding: 5rem 3rem;
+    }
+
+    /* About section*/
+    .about-text div{
+        padding: 3rem 3rem;
     }
 }
